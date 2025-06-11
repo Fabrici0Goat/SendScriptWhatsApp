@@ -16,7 +16,7 @@ async function enviarScript(scriptText){
 			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
 		}, 100);
 		
-		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
+		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 3000));
 	}
 	
 	return lines.length;
@@ -33,4 +33,14 @@ enviarScript(`
 8
 9
 10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
 `).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
